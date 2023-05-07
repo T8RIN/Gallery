@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.util.archivesName
 import java.io.FileInputStream
 import java.util.Properties
 
@@ -10,8 +11,8 @@ plugins {
 
 val versionMajor = 1
 val versionMinor = 0
-val versionPatch = 3
-val versionBuild = 7
+val versionPatch = 4
+val versionBuild = 18
 
 android {
     namespace = "com.dot.gallery"
@@ -33,6 +34,7 @@ android {
                 arguments["room.schemaLocation"] = "$projectDir/schemas"
             }
         }
+        archivesName.set("Gallery-$versionName")
     }
 
     lintOptions {
